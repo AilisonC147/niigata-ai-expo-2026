@@ -361,6 +361,17 @@ body{word-break:auto-phrase;line-break:strict}
 /* 相談メニュー：ブルー */
 .trial .ch span{color:#1F55C9 !important;background:#E8F0FD !important}
 .trial .ch span:before{color:#2F6FDB !important}
+/* 業種カード見出し帯：裏面 CTA と同じ濃紺グラデ */
+.ic .t{background:linear-gradient(110deg,#050038 0%,#0B0A4A 60%,#122060 100%) !important}
+/* 業種ごとの補助色（裏面の機能アイコンと同じ 4 色：グリーン／ティール／ブルー／パープル） */
+.igrid .ic:nth-child(1) .t svg{stroke:#B9CF3C !important}
+.igrid .ic:nth-child(2) .t svg{stroke:#43D1C3 !important}
+.igrid .ic:nth-child(3) .t svg{stroke:#5B9BF0 !important}
+.igrid .ic:nth-child(4) .t svg{stroke:#9177EE !important}
+.igrid .ic:nth-child(1) .t{border-bottom:1mm solid #8DB62B}
+.igrid .ic:nth-child(2) .t{border-bottom:1mm solid #1DAA9E}
+.igrid .ic:nth-child(3) .t{border-bottom:1mm solid #2F6FDB}
+.igrid .ic:nth-child(4) .t{border-bottom:1mm solid #6A4FD6}
 @media print { * { box-shadow:none !important; } }
 </style>
 </head>
@@ -383,17 +394,17 @@ body{word-break:auto-phrase;line-break:strict}
         <rect x="24" y="2" width="330" height="44" rx="22" fill="#6E7A22"/>
         <text x="189" y="33" text-anchor="middle" fill="#fff" font-size="25" font-weight="900">社内・庁内の閉域ネットワーク</text>
         <g font-size="28" font-weight="900" fill="#202733">
-          <rect x="34" y="66" width="206" height="68" rx="14" fill="#F6F8EC" stroke="#dfe4c9" stroke-width="2.500"/>
-          <rect x="34" y="150" width="206" height="68" rx="14" fill="#F6F8EC" stroke="#dfe4c9" stroke-width="2.500"/>
-          <rect x="34" y="234" width="206" height="68" rx="14" fill="#F6F8EC" stroke="#dfe4c9" stroke-width="2.500"/>
-          <rect x="34" y="318" width="206" height="68" rx="14" fill="#F6F8EC" stroke="#dfe4c9" stroke-width="2.500"/>
+          <rect x="34" y="66" width="206" height="68" rx="14" fill="#F4F8E4" stroke="#C9DA8A" stroke-width="2.500"/>
+          <rect x="34" y="150" width="206" height="68" rx="14" fill="#E8F7F5" stroke="#9ADDD5" stroke-width="2.500"/>
+          <rect x="34" y="234" width="206" height="68" rx="14" fill="#EAF1FC" stroke="#A9C4F0" stroke-width="2.500"/>
+          <rect x="34" y="318" width="206" height="68" rx="14" fill="#F0ECFC" stroke="#C3B5F0" stroke-width="2.500"/>
           <text x="108" y="110">自治体</text><text x="108" y="194">製造業</text><text x="108" y="278">建設業</text><text x="108" y="362">医療機関</text>
         </g>
         <g stroke="#6E7A22" stroke-width="3.500">
-          <path transform="translate(52 77)" d="M5 18 24 7l19 11zM10 22v14M19 22v14M29 22v14M38 22v14M5 41h38"/>
-          <path transform="translate(52 161)" d="M5 41V22l10 6v-6l10 6v-6l10 6V8h7v33zM13 34h4M23 34h4"/>
-          <path transform="translate(52 245)" d="M4 34h40v5H4zM9 34a15 15 0 0 1 30 0M21 20v-7h6v7"/>
-          <path transform="translate(52 329)" d="M19 7h10v12h12v10H29v12H19V29H7V19h12z"/>
+          <path stroke="#8DB62B" transform="translate(52 77)" d="M5 18 24 7l19 11zM10 22v14M19 22v14M29 22v14M38 22v14M5 41h38"/>
+          <path stroke="#1DAA9E" transform="translate(52 161)" d="M5 41V22l10 6v-6l10 6v-6l10 6V8h7v33zM13 34h4M23 34h4"/>
+          <path stroke="#2F6FDB" transform="translate(52 245)" d="M4 34h40v5H4zM9 34a15 15 0 0 1 30 0M21 20v-7h6v7"/>
+          <path stroke="#6A4FD6" transform="translate(52 329)" d="M19 7h10v12h12v10H29v12H19V29H7V19h12z"/>
         </g>
         <path d="M240 100h22M240 184h22M240 268h22M240 352h22M262 100v252" stroke="#9aa2b1" stroke-width="4"/>
         <path d="M268 150h86" stroke="#202733" stroke-width="8"/><path d="m346 136 18 14-18 14z" fill="#202733" stroke="#202733" stroke-width="4"/>
@@ -405,11 +416,19 @@ body{word-break:auto-phrase;line-break:strict}
         <path d="M454 330v-58" stroke="#202733" stroke-width="8"/><path d="m440 280 14-18 14 18z" fill="#202733" stroke="#202733" stroke-width="4"/>
         <g transform="translate(426 336)" fill="#fff" stroke="#202733" stroke-width="3.200"><path d="M16 4h20l10 10v30H16z"/><path d="M10 10h20l10 10v32H10z"/><path d="M16 30h18M16 37h18M16 44h12" stroke="#9BA832"/></g>
         <text x="454" y="420" text-anchor="middle" font-size="24" font-weight="900" fill="#202733">社内文書・図面・規程・記録</text>
-        <path d="M546 168h150" stroke="#9aa2b1" stroke-width="5" stroke-dasharray="4 12"/>
-        <path d="m630 148 28 28m0-28-28 28" stroke="#D8393F" stroke-width="9"/>
-        <g transform="translate(688 116)"><path d="M44 92h70a24 24 0 0 0 4-48 34 34 0 0 0-64-8 28 28 0 0 0-10 56z" fill="#f1f2f5" stroke="#9aa2b1" stroke-width="6"/></g>
-        <text x="768" y="248" text-anchor="middle" font-size="22" font-weight="700" fill="#5E6776">外部API・クラウド</text>
-        <text x="768" y="282" text-anchor="middle" font-size="28" font-weight="900" fill="#D8393F">接続なし</text>
+        <path d="M546 168h56" stroke="#9aa2b1" stroke-width="5" stroke-dasharray="4 12"/>
+        <!-- 閉域の境界に盾＋鍵：外部への通信を遮断 -->
+        <g transform="translate(604 118) scale(1.25)">
+          <path d="M32 3 5 13v22c0 19 11.500 30 27 36 15.500-6 27-17 27-36V13z" fill="#050038" stroke="#DCE972" stroke-width="3.500" stroke-linejoin="round"/>
+          <path d="M24 33v-6a8 8 0 0 1 16 0v6" fill="none" stroke="#DCE972" stroke-width="3.500" stroke-linecap="round"/>
+          <rect x="20" y="33" width="24" height="18" rx="3" fill="#DCE972"/>
+          <circle cx="32" cy="41" r="2.600" fill="#050038"/><path d="M32 42v4" stroke="#050038" stroke-width="2.400" stroke-linecap="round"/>
+        </g>
+        
+        <g transform="translate(688 116)"><path d="M44 92h70a24 24 0 0 0 4-48 34 34 0 0 0-64-8 28 28 0 0 0-10 56z" fill="#F4F5F7" stroke="#C3C8D1" stroke-width="6" stroke-dasharray="10 8"/></g>
+        <text x="768" y="248" text-anchor="middle" font-size="22" font-weight="700" fill="#8A919E">外部API・クラウド</text>
+        <rect x="690" y="258" width="156" height="44" rx="22" fill="#050038"/>
+        <text x="768" y="289" text-anchor="middle" font-size="26" font-weight="900" fill="#DCE972">通信を遮断</text>
       </svg>
     </div>
   </div>
