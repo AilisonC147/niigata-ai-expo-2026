@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>GBase On-premises バックパネル （W1800×H1200mm）</title>
+<!-- 1px = 1mm。左：メッセージ＋QR（目線の高さ）／右：①完全オンプレミス概念図（主役）→ ②導入事例2件 → ③量子化（帯で一段下げる） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: 1800mm 1200mm; margin: 0 }
+:root{ --navy:#1b212c; --olive:#9BA832; --olive-d:#6E7A22; --lime:#d4de6a; --ink:#1f2530; --mute:#6a7382; --red:#d8393f; --bg:#f5f7ea }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1800px;height:1200px;overflow:hidden;background:#fff;color:var(--ink);
+  font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;font-feature-settings:"palt"}
+.num{font-family:"Outfit","Noto Sans JP",sans-serif}
+.panel{position:relative;width:1800px;height:1200px;overflow:hidden;background:#fff}
+
+/* ---------- 左：メッセージ＋QR ---------- */
+.stripe{position:absolute;left:0;top:0;width:842px;height:1200px;background:var(--olive);clip-path:polygon(0 0,86.5% 0,100% 100%,0 100%)}
+.msg{position:absolute;left:0;top:0;width:812px;height:1200px;background:var(--navy);clip-path:polygon(0 0,86% 0,100% 100%,0 100%);color:#fff;padding:70px 0 0 76px}
+.msg .logo{height:78px;display:block}
+.msg .kicker{margin-top:70px;font-size:30px;font-weight:700;letter-spacing:.14em;color:var(--lime)}
+.msg h1{margin-top:18px;font-size:84px;font-weight:900;line-height:1.22;letter-spacing:.01em;white-space:nowrap}
+.msg h1 em{font-style:normal;color:var(--lime)}
+/* QR は見出しの直下＝目線の高さへ */
+.demo{margin-top:58px;display:flex;align-items:center;gap:28px}
+.demo .qr{flex:none;width:200px;height:200px;background:#fff;border-radius:16px;padding:14px;box-shadow:0 0 0 6px var(--lime)}
+.demo .qr img{width:100%;height:100%;display:block}
+.demo .tag{display:inline-block;background:var(--lime);color:var(--navy);font-size:24px;font-weight:900;border-radius:8px;padding:3px 14px}
+.demo b{display:block;font-size:46px;font-weight:900;white-space:nowrap;margin-top:10px}
+.demo span.u{display:block;font-size:30px;font-weight:700;color:var(--lime);margin-top:6px;letter-spacing:.02em}
+.co{position:absolute;left:76px;bottom:64px;font-size:26px;font-weight:700;color:#aab1bd;letter-spacing:.04em}
+
+/* ---------- 右 ---------- */
+.right{position:absolute;left:878px;top:0;right:64px;height:1200px;padding-top:54px}
+
+/* ① 見出し：完全オンプレミス（左の徽章をここへ統合） */
+.sec1{display:flex;align-items:center;gap:20px}
+.sec1 svg{flex:none;width:64px;height:74px}
+.sec1 b{font-size:48px;font-weight:900;color:var(--navy);white-space:nowrap}
+.sec1 span{font-size:28px;font-weight:700;color:var(--red);white-space:nowrap;margin-left:6px}
+
+/* ① 概念図（4業種共通に描き直し） */
+.dia{position:relative;height:440px;margin-top:18px}
+.dia > svg{position:absolute;inset:0}
+.flab{position:absolute;left:28px;top:4px;background:var(--olive-d);color:#fff;font-size:24px;font-weight:900;border-radius:99px;padding:5px 22px;white-space:nowrap}
+.ind{position:absolute;left:34px;width:206px;height:68px;background:#fff;border:2.5px solid #dfe4c9;border-radius:14px;display:flex;align-items:center;gap:12px;padding-left:14px;font-size:28px;font-weight:900;white-space:nowrap}
+.ind svg{flex:none;width:42px;height:42px}
+.lb{position:absolute;font-size:23px;font-weight:700;color:var(--mute);white-space:nowrap}
+.node{position:absolute;left:372px;top:82px;width:164px;height:164px;border-radius:50%;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 0 10px #e6ecc4}
+.node i{font-style:normal;font-size:64px;font-weight:800;color:var(--lime);line-height:1}
+.node small{font-size:15px;font-weight:700;margin-top:6px;letter-spacing:.02em}
+.docs{position:absolute;left:300px;top:322px;width:308px;text-align:center;font-size:24px;font-weight:900;white-space:nowrap}
+.docs svg{display:block;margin:0 auto 4px;width:56px;height:56px}
+.ext{position:absolute;left:668px;top:118px;width:190px;text-align:center}
+.ext svg{width:150px;height:110px;display:block;margin:0 auto}
+.ext b{display:block;font-size:24px;font-weight:700;color:var(--mute);margin-top:6px;white-space:nowrap}
+.ext strong{display:block;font-size:30px;font-weight:900;color:var(--red);white-space:nowrap}
+
+/* ② 導入事例：数字はここだけ大きく（視覚の中心は ①図 → ②事例 の順） */
+.label{display:flex;align-items:center;gap:16px;font-size:30px;font-weight:900;letter-spacing:.16em;color:var(--olive-d);margin-top:16px}
+.label:after{content:"";flex:1;height:3px;background:#e3e7d0}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px}
+.case{height:322px;border-radius:20px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.case .ph{flex:none;height:112px;background-size:cover;background-position:center;position:relative}
+.case .ph span{position:absolute;left:0;bottom:14px;background:var(--olive-d);color:#fff;font-size:25px;font-weight:900;padding:5px 20px 5px 24px;border-radius:0 99px 99px 0;white-space:nowrap}
+.case .tx{flex:1;padding:14px 26px 0}
+.case small{display:block;font-size:25px;font-weight:700;color:var(--mute);white-space:nowrap}
+.case strong{display:block;font-size:40px;font-weight:900;line-height:1;margin-top:6px;white-space:nowrap;color:var(--ink)}
+.case strong i{font-style:normal;font-size:100px;font-weight:800;color:var(--olive-d);letter-spacing:-.01em}
+.case strong u{text-decoration:none;font-size:44px;color:var(--olive);margin:0 .12em;position:relative;top:-14px}
+/* タグは2枚とも右上に揃える（製造業の写真は右側が空いた窓のため） */
+.case .ph span.r{left:auto;right:0;top:12px;bottom:auto;border-radius:99px 0 0 99px;padding:5px 24px 5px 20px}
+.case p{font-size:25px;font-weight:700;margin-top:10px;white-space:nowrap}
+.case p b{color:var(--olive-d);font-weight:900}
+
+/* ③ 量子化：帯にして一段下げる（大きな数字は使わない） */
+.tech{margin-top:14px;height:128px;border-radius:20px;background:var(--navy);color:#fff;display:flex;align-items:center;padding:0 34px;gap:30px}
+.tech h3{flex:none;font-size:27px;font-weight:900;line-height:1.35;color:var(--lime);border-right:3px solid #3a4250;padding-right:30px;white-space:nowrap}
+.tech .q{flex:none;white-space:nowrap}
+/* 2つ目の数字の右が空いていたので、3要素を均等配置 */
+.tech{justify-content:space-between;padding:0 64px 0 34px}
+.tech .q+.q{border-left:3px solid #3a4250;padding-left:56px}
+.tech .q small{display:block;font-size:22px;font-weight:700;color:#b9c0cc}
+.tech .q b{font-size:28px;font-weight:900}
+.tech .q b i{font-style:normal;font-size:58px;font-weight:800;color:#fff;margin:0 4px;line-height:1}
+.note{text-align:center;font-size:17px;color:#8a92a0;margin-top:8px}
+
+/* ═══ チラシ（flyer 42dccb9）と視覚を同期：LP 配色 v6 ═══
+   濃紺 #050038（グラデ #050038→#0B0A4A→#122060）／ライム #DCE972／赤は使わない
+   業種の補助色＝チラシ裏面の機能アイコンと同じ 4 色（グリーン／ティール／ブルー／パープル） */
+:root{--navy:#050038;--lime:#DCE972}
+.msg{background:linear-gradient(170deg,#050038 0%,#0B0A4A 60%,#122060 100%)}
+.tech{background:linear-gradient(110deg,#050038 0%,#0B0A4A 60%,#122060 100%)}
+.tech h3,.tech .q+.q{border-color:#2B2F66}
+.tech .q small{color:#C9CDE0}
+.co{color:#8E93B3}
+.sec1 span{color:var(--olive-d)}
+.node{background:var(--navy)}
+.case{background:#fff;border:2px solid #E1E5DA}
+.case .ph span{background:var(--navy);color:var(--lime)}
+.ind:nth-of-type(1){background:#F4F8E4;border-color:#C9DA8A}
+.ind:nth-of-type(2){background:#E8F7F5;border-color:#9ADDD5}
+.ind:nth-of-type(3){background:#EAF1FC;border-color:#A9C4F0}
+.ind:nth-of-type(4){background:#F0ECFC;border-color:#C3B5F0}
+.ext b{color:#8A919E}
+/* 事例の大数字：オリーブ #8A9E1E → 深緑 #5E9E3A の同系グラデ（チラシのライム→アクアは大判だと派手なので抑えた）。印刷で SMask を出さないよう白地の画像（6倍解像度）で配置。
+   画像は上下 116px、ベースラインは上から 87px → vertical-align:-29px で文字と揃える */
+.case strong img.gnum{display:inline-block;height:116px;vertical-align:-29px;margin:0 -2px -16px}
+.ext strong{display:inline-block;margin-top:8px;background:var(--navy);color:var(--lime);font-size:28px;border-radius:99px;padding:2px 26px}
+</style>
+</head>
+<body>
+<div class="panel">
+
+  <div class="stripe"></div>
+  <div class="msg">
+    <img class="logo" src="assets/logo_onprem_white.png" alt="GBase On-premises">
+    <div class="kicker">オンプレミス生成AI基盤</div>
+    <h1>データは<br>外に出せない。<br>それでも、<br><em>生成AIを現場に。</em></h1>
+    <div class="demo">
+      <div class="qr"><img src="assets/qr_onprem.svg" alt="https://gbase.ai/onprem/"></div>
+      <div><span class="tag">ブースで実機デモ</span><b>資料・デモ予約</b><span class="u num">gbase.ai/onprem</span></div>
+    </div>
+    <div class="co">Sparticle株式会社</div>
+  </div>
+
+  <div class="right">
+    <!-- ① 完全オンプレミス -->
+    <div class="sec1">
+      <svg viewBox="0 0 64 74" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M32 4 6 14v22c0 18 11 29 26 34 15-5 26-16 26-34V14z" fill="#eef2d4" stroke="#9BA832" stroke-width="5"/><path d="m19 38 9 9 17-19" stroke="#6E7A22" stroke-width="6"/></svg>
+      <b>完全オンプレミス</b><span>外部API・クラウドへの接続を遮断</span>
+    </div>
+
+    <div class="dia">
+      <svg viewBox="0 0 858 440" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="24" width="640" height="410" rx="24" fill="#f5f7ea" stroke="#9BA832" stroke-width="4" stroke-dasharray="14 10"/>
+        <!-- 4業種 → ブラケット -->
+        <path d="M240 98h22M240 182h22M240 266h22M240 350h22M262 98v252" stroke="#9aa2b1" stroke-width="4"/>
+        <!-- 質問 / 回答 -->
+        <path d="M268 146h86" stroke="#050038" stroke-width="8"/><path d="m346 132 18 14-18 14z" fill="#050038" stroke="#050038" stroke-width="4"/>
+        <path d="M282 190h86" stroke="#9BA832" stroke-width="8"/><path d="m290 176-18 14 18 14z" fill="#9BA832" stroke="#9BA832" stroke-width="4"/>
+        <!-- 文書 → AI -->
+        <path d="M454 316v-48" stroke="#050038" stroke-width="8"/><path d="m440 274 14-18 14 18z" fill="#050038" stroke="#050038" stroke-width="4"/>
+        <!-- 閉域の境界に盾＋鍵：外部への通信を遮断（チラシと同じ図形） -->
+        <path d="M546 170h56" stroke="#9aa2b1" stroke-width="5" stroke-dasharray="4 12"/>
+        <g transform="translate(604 120) scale(1.25)">
+          <path d="M32 3 5 13v22c0 19 11.500 30 27 36 15.500-6 27-17 27-36V13z" fill="#050038" stroke="#DCE972" stroke-width="3.500" stroke-linejoin="round"/>
+          <path d="M24 33v-6a8 8 0 0 1 16 0v6" fill="none" stroke="#DCE972" stroke-width="3.500" stroke-linecap="round"/>
+          <rect x="20" y="33" width="24" height="18" rx="3" fill="#DCE972"/>
+          <circle cx="32" cy="41" r="2.600" fill="#050038"/><path d="M32 42v4" stroke="#050038" stroke-width="2.400" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span class="flab">社内・庁内の閉域ネットワーク</span>
+
+      <div class="ind" style="top:64px"><svg viewBox="0 0 48 48" stroke="#8DB62B" stroke-width="3.500" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M5 18 24 7l19 11zM10 22v14M19 22v14M29 22v14M38 22v14M5 41h38"/></svg>自治体</div>
+      <div class="ind" style="top:148px"><svg viewBox="0 0 48 48" stroke="#1DAA9E" stroke-width="3.500" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M5 41V22l10 6v-6l10 6v-6l10 6V8h7v33zM13 34h4M23 34h4"/></svg>製造業</div>
+      <div class="ind" style="top:232px"><svg viewBox="0 0 48 48" stroke="#2F6FDB" stroke-width="3.500" fill="none" stroke-linejoin="round" stroke-linecap="round"><path d="M4 34h40v5H4zM9 34a15 15 0 0 1 30 0M21 20v-7h6v7"/></svg>建設業</div>
+      <div class="ind" style="top:316px"><svg viewBox="0 0 48 48" stroke="#6A4FD6" stroke-width="3.500" fill="none" stroke-linejoin="round"><path d="M19 7h10v12h12v10H29v12H19V29H7V19h12z"/></svg>医療機関</div>
+
+      <span class="lb" style="left:286px;top:106px">質問</span>
+      <span class="lb" style="left:286px;top:204px">回答</span>
+      <div class="node"><i class="num">AI</i><small class="num">GBase On-Prem</small></div>
+      <span class="lb" style="left:470px;top:272px">検索・参照</span>
+      <div class="docs"><svg viewBox="0 0 56 56" fill="#fff" stroke="#050038" stroke-width="3.200" stroke-linejoin="round"><path d="M16 4h20l10 10v30H16z"/><path d="M10 10h20l10 10v32H10z"/><path d="M16 30h18M16 37h18M16 44h12" stroke="#9BA832"/></svg>社内文書・図面・規程・記録</div>
+
+      <div class="ext">
+        <svg viewBox="0 0 150 110" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 92h70a24 24 0 0 0 4-48 34 34 0 0 0-64-8 28 28 0 0 0-10 56z" fill="#F4F5F7" stroke="#C3C8D1" stroke-width="6" stroke-dasharray="10 8"/></svg>
+        <b>外部API・クラウド</b><strong>通信を遮断</strong>
+      </div>
+    </div>
+
+    <!-- ② ハイブリッド量子化（帯） -->
+    <div class="tech">
+      <h3>独自の<br>ハイブリッド量子化</h3>
+      <div class="q"><small>GPU使用量</small><b>最大<i class="num">75%</i>削減</b></div>
+      <div class="q"><small>推論速度</small><b>最大<i class="num">3</i>倍</b></div>
+    </div>
+    <p class="note">※ 弊社環境での社内ベンチマーク値。実環境では構成により異なります。</p>
+
+
+    <!-- ③ 導入事例 -->
+    <div class="label">導入事例</div>
+    <div class="cases">
+      <div class="case">
+        <div class="ph" style="background-image:url(assets/scene_gov.jpg);background-size:135%;background-position:0% 40%"><span class="r">自治体（県庁）</span></div>
+        <div class="tx">
+          <small>全職員が本番運用中</small>
+          <strong><img class="gnum" src="assets/gnum_6000.png" alt="6,000" style="width:285.31px">名超</strong>
+          <p>問い合わせ対応を<b>約70%削減</b></p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="ph" style="background-image:url(assets/case_mfg.jpg);background-size:118%;background-position:0% 18%"><span class="r">製造業（機械メーカー）</span></div>
+        <div class="tx">
+          <small>技術情報の検索時間</small>
+          <strong><img class="gnum" src="assets/gnum_30.png" alt="30" style="width:126px">分<u>▶</u><img class="gnum" src="assets/gnum_2.png" alt="2" style="width:60.61px">分</strong>
+          <p>情報漏洩<b>0件</b>で運用</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
